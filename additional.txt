@@ -1,0 +1,102 @@
+console.log("get cars data");
+	var post_data = '<soapenv:Envelope' +
+             ' xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"' + 
+             ' xmlns:urn="urn:description7b.services.chrome.com">' + 
+               '<soapenv:Header/>' +
+               '<soapenv:Body>' +
+                  '<urn:VehicleDescriptionRequest>' + 
+                     '<urn:accountInfo' +
+                      ' number="313496"' +
+                      ' secret="6d84d5c446a84c98"' +
+                      ' country="US"' +
+                      ' language="en"' +
+                      ' behalfOf="?"' +
+                     '/>' +
+                     '<urn:modelYear>2011</urn:modelYear>' +
+                    '<urn:makeName>Ford</urn:makeName>' +
+                    '<urn:modelName>F-150</urn:modelName>' +
+                  '</urn:VehicleDescriptionRequest>' +
+               '</soapenv:Body>' +
+            '</soapenv:Envelope>'; 
+    headers = {
+        host: 'services.chromedata.com',        
+        method: 'POST',
+        path: '/Description/7b',        
+        headers: {
+            'SOAPAction': '',
+            'MIME-Version': '1.0',
+            'Content-type': 'text/xml; charset=utf-8',
+        }
+    };
+
+    var xmlData ='';
+    var parseString = require('xml2js').parseString;
+	var request = http.request(headers, function(response) {
+	    response.on('data', function(d) {
+	    	xmlData += d;
+	        // console.log(d);
+	    });
+	    response.on('end', function() {
+	    	console.log("end");	    		    	
+	    	parseString(xmlData, function (err, result) {
+			    console.dir(JSON.stringify(result));
+    			res.send(result);
+			});
+	    })
+	});
+	request.on('error', function(err) {
+	    console.log("An error ocurred!");
+	    console.log(err);
+	});
+	request.write(post_data);
+	request.end();
+
+
+
+
+
+  http://localhost:3030/car/makes/models_data/1/1/5
+
+
+  http://313496:6d84d5c446a84c98@media.chromedata.com/MediaGallery/service/style/323847/.json
+  http://313496:6d84d5c446a84c98@media.chromedata.com/MediaGallery/service/style/323847/
+
+  $xmlRequest = '<soapenv:Envelope
+             xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+             xmlns:urn="urn:description7b.services.chrome.com">
+               <soapenv:Header/>
+               <soapenv:Body>
+                  <urn:VehicleDescriptionRequest>
+                     <urn:accountInfo
+                      number="' . $this->_userNumber . '"
+                      secret="' . $this->_userSecret . '"
+                      country="US"
+                      language="en"
+                      behalfOf="?"
+                     />
+                     <urn:modelYear>2017</urn:modelYear>
+                    <urn:makeName>Ford</urn:makeName>
+                    <urn:modelName>Expedition</urn:modelName>                    
+                    <urn:switch>ShowExtendedDescriptions</urn:switch>
+                    <urn:switch>ShowAvailableEquipment</urn:switch>
+                  </urn:VehicleDescriptionRequest>
+               </soapenv:Body>
+            </soapenv:Envelope>';
+
+
+
+
+  //       <urn:DivisionsRequest modelYear="2018">
+//          <urn:accountInfo number="313496" secret="6d84d5c446a84c98" country="US" language="EN" behalfOf="?"/>
+//       </urn:DivisionsRequest>
+
+
+
+//       <urn:ModelsRequest>
+//          <urn:accountInfo number="313496" secret="6d84d5c446a84c98" country="US" language="EN" behalfOf="?"/>
+//          <urn:modelYear>2018</urn:modelYear>
+//          <urn:divisionId>13</urn:divisionId>
+//       </urn:ModelsRequest>
+
+
+http://services.chromedata.com/Description/7b?wsdl

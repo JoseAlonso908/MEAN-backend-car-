@@ -1,0 +1,50 @@
+<S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+   <S:Body>
+      <Divisions xmlns="urn:description7b.services.chrome.com">
+         <responseStatus responseCode="Successful" description="Successful"/>
+         <division id="1">Acura</division>
+         <division id="43">Alfa Romeo</division>
+         <division id="44">Aston Martin</division>
+         <division id="4">Audi</division>
+         <division id="45">Bentley</division>
+         <division id="5">BMW</division>
+         <division id="6">Buick</division>
+         <division id="7">Cadillac</division>
+         <division id="8">Chevrolet</division>
+         <division id="9">Chrysler</division>
+         <division id="11">Dodge</division>
+         <division id="46">Ferrari</division>
+         <division id="59">FIAT</division>
+         <division id="13">Ford</division>
+         <division id="170">Freightliner</division>
+         <division id="62">Genesis</division>
+         <division id="15">GMC</division>
+         <division id="16">Honda</division>
+         <division id="17">Hyundai</division>
+         <division id="18">INFINITI</division>
+         <division id="20">Jaguar</division>
+         <division id="21">Jeep</division>
+         <division id="22">Kia</division>
+         <division id="47">Lamborghini</division>
+         <division id="23">Land Rover</division>
+         <division id="24">Lexus</division>
+         <division id="25">Lincoln</division>
+         <division id="53">Maserati</division>
+         <division id="26">Mazda</division>
+         <division id="61">McLaren</division>
+         <division id="27">Mercedes-Benz</division>
+         <division id="2">MINI</division>
+         <division id="29">Mitsubishi</division>
+         <division id="30">Nissan</division>
+         <division id="34">Porsche</division>
+         <division id="57">Ram</division>
+         <division id="49">Rolls-Royce</division>
+         <division id="42">smart</division>
+         <division id="37">Subaru</division>
+         <division id="56">Tesla</division>
+         <division id="39">Toyota</division>
+         <division id="40">Volkswagen</division>
+         <division id="41">Volvo</division>
+      </Divisions>
+   </S:Body>
+</S:Envelope>
